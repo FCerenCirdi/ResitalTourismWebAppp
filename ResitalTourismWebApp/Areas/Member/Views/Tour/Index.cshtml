@@ -1,0 +1,78 @@
+﻿@using EntityLayer.Concrete
+@model ResitalTourismWebApp.Views.ViewModels.TourViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Oteller</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Otel Adı</th>
+        <th>Adresi</th>
+        <th>1 Gecelik</th>
+        <th>Fiyat</th>
+    </tr>
+    @foreach (var item in Model.Hotels)
+    {
+        <tr>
+            <td>@item.HotelId</td>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.DayNight</td>
+            <td>@item.Price₺</td>
+        </tr>
+    }
+</table>
+<br />
+<h1>Aktif Tur Rotaları</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Tur Adı</th>
+        <th>Bölge</th>
+        <th>Kapasite</th>
+        <th>Fiyat</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model.Tours)
+   {
+       <tr>
+        <td>@item.TourId</td>
+        <td>@item.Name</td>
+        <td>@item.Region</td>
+        <td>@item.Capacity</td>
+        <td>@item.Price₺</td>
+
+        <td><a href="#" class="btn btn-outline-info">Detaylar</a></td>
+       </tr>
+
+    }
+</table>
+<br />
+<h1>Aktif Gemi Tur Rotaları</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gemi Adı</th>
+        <th>Bölge</th>
+        <th>Kapasite</th>
+        <th>Fiyat</th>
+        <th>Kaç Gece</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model.ShipTours)
+    {
+        <tr>
+            <td>@item.ShipId</td>
+            <td>@item.Name</td>
+            <td>@item.Region</td>
+            <td>@item.Capacity</td>
+            <td>@item.Price$</td>
+            <td>@item.DayNight</td>
+            <td><a href="#" class="btn btn-outline-info">Detaylar</a></td>
+        </tr>
+
+    }
+</table>

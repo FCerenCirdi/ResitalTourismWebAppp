@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Tour
+@{
+    ViewData["Title"] = "AddTour";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Tur Oluşturma Sayfası</h1>
+
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Tur Adı")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Tur Hakkında")
+        <input type="text" asp-for="Description" class=" form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Kapasite")
+        <input type="text" asp-for="Capacity" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Fiyat")
+        <input type="text" asp-for="Price" class=" form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Bölge")
+        <input type="text" asp-for="Region" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Rehber")
+        <input type="text" asp-for="GuideId" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Tur Detayı")
+       <textarea cols="30" rows="5" class="form-control" asp-for="Details1"></textarea>
+    </div>
+    <div class="form-group">
+        @Html.Label("Tur Detayı Devam")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Details2"></textarea>
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Oluştur</button>
+</form>
+
+

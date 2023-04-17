@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Hotel
+@{
+    ViewData["Title"] = "UpdateHotel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1> Otel Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="HotelId" />
+    <div class="form-group">
+        @Html.Label("Otel Adı")
+        <input type="text" asp-for="Name" asp-items="Model.Hotels" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Adres")
+        <input type="text" asp-for="Address" class=" form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Tarih")
+        <input type="text" asp-for="DayNight" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Fiyat")
+        <input type="text" asp-for="Price" class=" form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Durum")
+        <input type="text" asp-for="Status" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>
+
+
+
